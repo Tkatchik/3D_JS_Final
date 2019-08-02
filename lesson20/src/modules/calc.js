@@ -1,3 +1,19 @@
+const justNumber = () => {
+    const calcItem = document.querySelectorAll('.calc-item');
+
+    calcItem.forEach((element) => {
+        if (element.matches('select')) {
+            return;
+
+        } else {
+            element.addEventListener('input', (item) => {
+                item.target.value = item.target.value.replace(/\D/g, '');
+            });
+        }
+    });
+}; //justnumber
+justNumber();
+
 const calc = (price = 100) => {
 
     const calcBlock = document.querySelector('.calc-block'),
@@ -29,7 +45,7 @@ const calc = (price = 100) => {
             total = price * typeValue * squareValue * countValue * dayValue;
         }
 
-        totalValue.textContent = total;
+        totalValue.textContent = Math.floor(total);
     }; //countSum
 
 
