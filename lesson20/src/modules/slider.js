@@ -94,5 +94,4 @@ const slider = () => {
 
 }; //const slider
 
-
 export default slider;
