@@ -15,7 +15,7 @@ const slider = () => {
             newDot.classList.add('dot-active');
         }
         portfolioDots.appendChild(newDot);
-    };
+    }
     const dot = document.querySelectorAll('.dot');
 
     let currentSlide = 0,
