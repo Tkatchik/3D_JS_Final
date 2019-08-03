@@ -1,19 +1,22 @@
-const insertDots = () => {
-    let slide = document.querySelectorAll('.portfolio-item'),
-        dots = document.querySelector('.portfolio-dots');
-
-    slide.forEach(() => {
-        let newDot = document.createElement('li');
-        newDot.className = 'dot';
-        dots.appendChild(newDot);
-    });
-}; // const insertDots
-insertDots();
-
 const slider = () => {
     const slide = document.querySelectorAll('.portfolio-item'),
-        dot = document.querySelectorAll('.dot'),
+        portfolioDots = document.querySelector('.portfolio-dots'),
         slider = document.querySelector('.portfolio-content');
+
+    let newDot = document.createElement('li');
+    newDot.classList.add('dot');
+
+
+    for (let i = 0; i < slide.length; i++) {
+        newDot = document.createElement('li');
+        newDot.classList.add('dot');
+
+        if (i === 0) {
+            newDot.classList.add('dot-active');
+        }
+        portfolioDots.appendChild(newDot);
+    };
+    const dot = document.querySelectorAll('.dot');
 
     let currentSlide = 0,
         interval;
